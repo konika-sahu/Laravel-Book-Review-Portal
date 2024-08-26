@@ -61,4 +61,10 @@
             
         @endforelse
     </ul>
+
+    @if($books -> count())
+    <nav>
+        {{ $books -> links()}}
+    </nav>
+    @endif
 @endsection
