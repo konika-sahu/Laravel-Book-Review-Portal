@@ -90,4 +90,10 @@ class Book extends Model
         ->minReviews(5);
     }
 
+    protected static function booted() 
+    {
+        static::updated(fn(Book $book) => Cache::forget('book:'. $book->id));
+        static::deleted(fn(Book $book) => Cache::forget('book:'. $book->id));
+    }
+
 }
