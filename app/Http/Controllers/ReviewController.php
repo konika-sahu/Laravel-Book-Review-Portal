@@ -22,7 +22,8 @@ class ReviewController extends Controller
      */
     public function create(Book $book)
     {
-        //
+        return view('books.reviews.create', ['book' => $book]);
+
     }
 
     /**
